@@ -129,7 +129,7 @@ public class GPIODemoMainActivity extends Activity {
         setTitle("GPIO Demo");
 
         int boardType = HardwareControler.getBoardType();
-        if (boardType == BoardType.Smart4418SDK) {
+        if (boardType == BoardType.Smart4418SDK || boardType == BoardType.Smart6818) {
             demoGPIOPins.put("GPIOC9", 73);
             demoGPIOPins.put("GPIOC10", 74);
             demoGPIOPins.put("GPIOC11", 75);
