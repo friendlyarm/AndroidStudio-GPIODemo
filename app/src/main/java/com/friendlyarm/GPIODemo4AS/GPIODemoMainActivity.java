@@ -46,7 +46,7 @@ public class GPIODemoMainActivity extends Activity {
         }
 
     public void onMoreSamplesPressed(View view) {
-        Uri uri = Uri.parse("http://wiki.friendlyarm.com/wiki/index.php/FriendlyThings_for_RK3399");
+        Uri uri = Uri.parse("http://wiki.friendlyelec.com/wiki/index.php/FriendlyThings_for_Rockchip");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent); 
     }
@@ -164,6 +164,52 @@ public class GPIODemoMainActivity extends Activity {
         } else if (boardType == BoardType.SOM_RK3399 || boardType == BoardType.SOM_RK3399v2) {
             demoGPIOPins.put("Pin7", 41);
             demoGPIOPins.put("Pin9", 42);
+        } else if (boardType == BoardType.NanoPC_T6) {
+            demoGPIOPins.put("Pin07", 106);  // GPIO3_B2
+            demoGPIOPins.put("Pin12", 111);  // GPIO3_B7
+            demoGPIOPins.put("Pin15",  39);  // GPIO1_A7
+            demoGPIOPins.put("Pin16", 107);  // GPIO3_B3
+            demoGPIOPins.put("Pin18", 108);  // GPIO3_B4
+            demoGPIOPins.put("Pin26",  40);  // GPIO1_B0
+            //spi0 (m2)
+            //demoGPIOPins.put("Pin19",  42);  // GPIO1_B2
+            //demoGPIOPins.put("Pin21",  41);  // GPIO1_B1
+            //demoGPIOPins.put("Pin22",  45);  // GPIO1_B5
+            //demoGPIOPins.put("Pin23",  43);  // GPIO1_B3
+            //demoGPIOPins.put("Pin24",  44);  // GPIO1_B4
+        } else if (boardType == BoardType.NanoPi_R6C) {
+            //i2s1 (m0)
+            demoGPIOPins.put("Pin07", 128);  // GPIO4_A0
+            demoGPIOPins.put("Pin11", 129);  // GPIO4_A1
+            demoGPIOPins.put("Pin13", 130);  // GPIO4_A2
+            demoGPIOPins.put("Pin15", 133);  // GPIO4_A5
+            demoGPIOPins.put("Pin16", 134);  // GPIO4_A6
+            demoGPIOPins.put("Pin18", 137);  // GPIO4_B1
+            demoGPIOPins.put("Pin22", 138);  // GPIO4_B2
+        } else if (boardType == BoardType.NanoPi_R6S) {
+            //spi0
+            demoGPIOPins.put("Pin03",  43);  // GPIO1_B3
+            demoGPIOPins.put("Pin05",  41);  // GPIO1_B1
+            demoGPIOPins.put("Pin06",  44);  // GPIO1_B4
+            demoGPIOPins.put("Pin07",  42);  // GPIO1_B2
+            //uart1 (m1)
+            demoGPIOPins.put("Pin09",  47);  // GPIO1_B7
+            demoGPIOPins.put("Pin10",  46);  // GPIO1_B6
+            //uart5 (m1)
+            //demoGPIOPins.put("Pin11", 116);  // GPIO3_C4
+            //demoGPIOPins.put("Pin12", 117);  // GPIO3_C5
+        } else if (boardType == BoardType.NanoPi_R5S || boardType == BoardType.NanoPi_R5S_LTS) {
+            //spi1
+            demoGPIOPins.put("Pin03", 115);  // GPIO3_C3
+            demoGPIOPins.put("Pin05", 114);  // GPIO3_C2
+            demoGPIOPins.put("Pin06",  97);  // GPIO3_A1
+            demoGPIOPins.put("Pin07", 113);  // GPIO3_C1
+            //uart9 (m1)
+            //demoGPIOPins.put("Pin09", 149);  // GPIO4_C5
+            //demoGPIOPins.put("Pin10", 150);  // GPIO4_C6
+            //uart7 (m1)
+            demoGPIOPins.put("Pin11", 116);  // GPIO3_C4
+            demoGPIOPins.put("Pin12", 117);  // GPIO3_C5
         } else if (android.os.Build.VERSION.RELEASE.contains("4.1.2")) {
             demoGPIOPins.put("LED 1", 281);
             demoGPIOPins.put("LED 2", 282);
